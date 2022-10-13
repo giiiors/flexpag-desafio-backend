@@ -1,7 +1,7 @@
 package com.flexpag.paymentscheduler.repository;
 
-import com.flexpag.paymentscheduler.model.PagamentoModel;
+import com.flexpag.paymentscheduler.model.Pagamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PagamentoRepository extends JpaRepository<PagamentoModel, Long>{
+public interface PagamentoRepository extends JpaRepository<Pagamento, Long>{
 }

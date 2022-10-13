@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name="tb_pagamentos")
-public class PagamentoModel {
+public class Pagamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pagamento_seq")
@@ -25,6 +25,7 @@ public class PagamentoModel {
 	
 	private String usuario;
 	private String horaAgendamento;
+	private Double valor;
 
 	@Enumerated(EnumType.STRING)
 	private Status status;
