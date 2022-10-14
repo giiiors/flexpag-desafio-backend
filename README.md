@@ -25,13 +25,13 @@ Bom desafio!
 
 # 🧠 Contexto
 
-A Flexpag é uma empresa de tecnologia especializada em soluções digitais de pagamento. Sabendo disso, montamos um desafio que consiste em implementar um serviço de pagamento agendando.
+A Flexpag é uma empresa de tecnologia especializada em soluções digitais de agendamento. Sabendo disso, montamos um desafio que consiste em implementar um serviço de agendamento agendando.
 
 ### 🚰 Fluxo esperado
 
 - Quando um agendamento é enviado deve ser registrado como `pending` e retornado o id;
 - O usuário deve conseguir consultar o status do agendamento `pending`|`paid`;
-- :warning: **Se o pagamento ainda não foi realizado o usuário pode**;
+- :warning: **Se o agendamento ainda não foi realizado o usuário pode**;
   - Excluir o agendamento;
   - Atualizar a data:hora do agendamento;
   

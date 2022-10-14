@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Table(name="tb_pagamentos")
-public class Pagamento {
+public class Agendamento {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pagamento_seq")
