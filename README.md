@@ -20,6 +20,7 @@ Venho por meio deste repositorio entregar a aplicação `back-end` do desafio. E
 -   [📥 download](#-download)
   -   [setup](#-setup)
   -   [starting](#-starting)
+-   [📄 Swagger](#-swagger)
 -   [🛠 tecnologias](#-tecnologias)
 -   [✍🏼 autora](#-autora)
 
@@ -109,6 +110,15 @@ $ ./mvnw spring-boot:run
 
 # aplicação iniciará em <http://localhost:8080/>
 ```
+
+<br>
+
+## 📄 Swagger
+
+|      | Endpoint                                    | Descrição           |
+|------|---------------------------------------------|---------------------|
+| rota | http://localhost:8080/swagger-ui/index.html | documentação da api |
+
 
 <br>
 
