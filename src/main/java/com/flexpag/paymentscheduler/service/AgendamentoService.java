@@ -1,11 +1,14 @@
 package com.flexpag.paymentscheduler.service;
 
 import com.flexpag.paymentscheduler.exception.BadRequestException;
+import com.flexpag.paymentscheduler.exception.NotFoundException;
 import com.flexpag.paymentscheduler.model.Agendamento;
 import com.flexpag.paymentscheduler.repository.AgendamentoRepository;
 import com.flexpag.paymentscheduler.utils.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class AgendamentoService {
@@ -19,7 +22,9 @@ public class AgendamentoService {
     }
 
     public Agendamento obterAgendamento(Long id) {
-        return this.repository.findById(id).get();
+        Optional<Agendamento> agendamento = this.repository.findById(id);
+        return agendamento.orElseThrow(() -> new NotFoundException("Agendamento não encontrado!"));
+
     }
 
     public Agendamento realizarPagamento(Long id) {

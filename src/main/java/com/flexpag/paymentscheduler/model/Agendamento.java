@@ -1,6 +1,7 @@
 package com.flexpag.paymentscheduler.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 
@@ -24,7 +25,6 @@ public class Agendamento {
 	private Long id;
 	
 	private String usuario;
-	private String horaAgendamento;
 	private Double valor;
 
 	@Enumerated(EnumType.STRING)
@@ -32,5 +32,8 @@ public class Agendamento {
 	
 	@JsonFormat (pattern="dd/MM/yyyy")
 	private LocalDate dataAgendamento;
+
+	@JsonFormat (pattern="HH:mm")
+	private Date horaAgendamento;
 	
 }
