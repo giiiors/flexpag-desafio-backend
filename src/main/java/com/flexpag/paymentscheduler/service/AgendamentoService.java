@@ -5,6 +5,7 @@ import com.flexpag.paymentscheduler.exception.NotFoundException;
 import com.flexpag.paymentscheduler.model.Agendamento;
 import com.flexpag.paymentscheduler.repository.AgendamentoRepository;
 import com.flexpag.paymentscheduler.utils.Status;
+import com.flexpag.paymentscheduler.utils.Validacao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,8 @@ public class AgendamentoService {
     private AgendamentoRepository repository;
 
     public Agendamento agendarPagamento(Agendamento agendamento) {
+        Validacao.validarAgendamento(agendamento);
+
         agendamento.setStatus(Status.PENDING);
         return this.repository.save(agendamento);
     }
@@ -33,10 +36,12 @@ public class AgendamentoService {
         return this.repository.save(agendamento);
     }
 
-        public Agendamento atualizarAgendamento(Long id, Agendamento agendamentoAtualizado) {
+    public Agendamento atualizarAgendamento(Long id, Agendamento agendamentoAtualizado) {
         Agendamento agendamento = this.obterAgendamento(id);
 
         if (agendamento.getStatus() == Status.PAID) throw new BadRequestException("O boleto já foi pago, não pode ser atualizado!");
+
+        Validacao.validarAgendamento(agendamentoAtualizado);
 
         agendamento.setUsuario(agendamentoAtualizado.getUsuario());
         agendamento.setHoraAgendamento(agendamentoAtualizado.getHoraAgendamento());
@@ -56,7 +61,7 @@ public class AgendamentoService {
     }
 
     public Status consultarStatus(Long id) {
-       Agendamento agendamento = this.obterAgendamento(id);
-       return agendamento.getStatus();
+        Agendamento agendamento = this.obterAgendamento(id);
+        return agendamento.getStatus();
     }
 }

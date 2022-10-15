@@ -30,10 +30,10 @@ public class Agendamento {
 	@Enumerated(EnumType.STRING)
 	private Status status;
 	
-	@JsonFormat (pattern="dd/MM/yyyy")
+	@JsonFormat(pattern="dd/MM/yyyy")
 	private LocalDate dataAgendamento;
 
-	@JsonFormat (pattern="HH:mm")
+	@JsonFormat(pattern="HH:mm")
 	private Date horaAgendamento;
 	
 }
